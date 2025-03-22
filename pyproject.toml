@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coregister"
+version = "0.1.0"
+authors = [
+    { name = "Andrew Ryan", email = "andrewryan@duck.com" }
+]
+description = "desctiption"
+keywords = ["keyword1", "keyword2", "keyword3"]
+readme = "README.pypi.md"
+license = {text = "MIT"}
+requires-python = ">=3.12"
+dependencies = [
+    "opencv-python",
+    "numpy",
+    "Pillow",
+    "geopandas",
+    "affine",
+    "shapely",
+    "pre-commit",
+    "pytest",
+    "black",
+    "flake8",
+    "isort",
+    "mypy",
+    "detect-secrets",
+]
+[project.optional-dependencies]
+gdal = ["GDAL>=3.8.4"]
+
+[project.urls]
+"Homepage" = "https://github.com/andreweryan/coregister"
+"Bug Tracker" = "https://github.com/andreweryan/coregister/issues"
+"Source Code" = "https://github.com/andreweryan/coregister"
+
+[tool.setuptools.packages]
+find = {}
+
+[project.scripts]
+coregister = "coregister.cli:main"
